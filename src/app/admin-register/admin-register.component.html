@@ -1,0 +1,116 @@
+<br><br>
+<form class="signup_form" [formGroup]="adminRegister" novalidate>
+  <p class="form_title">Admin Sign Up</p>
+  <div class="social">
+      <i class="fab fa-facebook facebook"></i>
+      <i class="fab fa-twitter twitter"></i>
+      <i class="fab fa-google google"></i>
+  </div>
+  <p style="text-align:center">OR</p>
+  <div class="col-auto">
+    <div class="input-group mb-2">
+      <div class="input-group-prepend">
+        <div class="input-group-text"><i class="fas fa-user"></i></div>
+      </div>
+      <input formControlName="firstName" name="firstName" #firstName 
+              placeholder="First Name" type="text" class="form-control"
+              [class.is-invalid]="firstname.touched && firstname.invalid" 
+              pattern="[A-Za-z0-9]{8,15}" required  autocomplete="off">
+      <div *ngIf="firstname.errors && (firstname.invalid && firstname.touched)">
+        <small class="text-danger" *ngIf="firstname.errors.required">Firstname is required</small>
+        <small class="text-danger" *ngIf="firstname.errors.pattern">Firstname should be between 4 to 10 characters</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-auto">
+    <div class="input-group mb-2">
+      <div class="input-group-prepend">
+        <div class="input-group-text"><i class="fas fa-user"></i></div>
+      </div>
+      <input formControlName="lastName" name="lastName" #lastName 
+              placeholder="Last Name" type="text" class="form-control"
+              [class.is-invalid]="lastname.touched && lastname.invalid" 
+              pattern="[A-Za-z0-9]{8,15}" required  autocomplete="off">
+      <div *ngIf="lastname.errors && (lastname.invalid && lastname.touched)">
+        <small class="text-danger" *ngIf="lastname.errors.required">Lastname is required</small>
+        <small class="text-danger" *ngIf="lastname.errors.pattern">Lastname should be between 4 to 10 characters</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-auto">
+    <div class="input-group mb-2">
+      <div class="input-group-prepend">
+        <div class="input-group-text"><i class="fas fa-user"></i></div>
+      </div>
+      <input formControlName="userName" name="userName" #userName 
+              placeholder="User Name" type="text" class="form-control"
+              [class.is-invalid]="username.touched && username.invalid" 
+              pattern="[A-Za-z0-9]{8,15}" required  autocomplete="off">
+      <div *ngIf="username.errors && (username.invalid && username.touched)">
+        <small class="text-danger" *ngIf="username.errors.required">Username is required</small>
+        <small class="text-danger" *ngIf="username.errors.pattern">Username should be between 8 to 10 characters</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-auto">
+    <div class="input-group mb-2">
+      <div class="input-group-prepend">
+        <div class="input-group-text"><i class="fas fa-envelope"></i></div>
+      </div>
+      <input formControlName="emailId" name="emailId" #emailId 
+              placeholder="Email-Id" type="email" class="form-control"
+              [class.is-invalid]="email.touched && email.invalid" email required  autocomplete="off">
+      <div *ngIf="email.errors && (email.invalid && email.touched)">
+        <small class="text-danger" *ngIf="email.errors.required">Email is required</small>
+        <small class="text-danger" *ngIf="email.errors.email">Invalid Email-Id</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-auto">
+    <div class="input-group mb-2">
+      <div class="input-group-prepend">
+        <div class="input-group-text"><i class="fas fa-key"></i></div>
+      </div>
+      <input formControlName="password" name="password" #password
+              placeholder="Password" type="password" class="form-control"
+              [class.is-invalid]="password.touched && password.invalid" 
+              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required autocomplete="off">
+      <div *ngIf="password.errors && (password.invalid && password.touched)">
+        <small class="text-danger" *ngIf="password.errors.required">Password is required</small>
+        <small class="text-danger" *ngIf="password.errors.pattern">Password must have 1 uppercase, 1 lowercase, 1 number</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-auto">
+    <div class="input-group mb-2">
+      <div class="input-group-prepend">
+        <div class="input-group-text"><i class="fas fa-mobile-alt"></i></div>
+      </div>
+      <input formControlName="mobile" name="mobile" #mobile 
+              placeholder="Mobile" type="tel" class="form-control"
+              [class.is-invalid]="mobile.touched && mobile.invalid" 
+              pattern="^\d{10}$" required autocomplete="off">
+      <div *ngIf="mobile.errors && (mobile.invalid && mobile.touched)">
+        <small class="text-danger" *ngIf="mobile.errors.required">Mobile number is required</small>
+        <small class="text-danger" *ngIf="mobile.errors.pattern">Must have 10 numbers</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="gender">
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="gender" id="gender" value="male" ngModel required>
+        <label class="form-check-label" for="inlineRadio1">Male</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="gender" id="gender" value="female" ngModel required>
+        <label class="form-check-label" for="inlineRadio2">Female</label>
+    </div>
+  </div><br>
+  <button type="submit" [disabled]="adminRegister.invalid" class="btn signup_btn" data-toggle="modal" data-target=".bd-example-modal-sm">Sign Up</button><br>
+</form>

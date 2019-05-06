@@ -1,0 +1,52 @@
+<form class="product" #form="ngForm" (ngSubmit)="addData(form)">
+  <div class="product-sec"><label class="product-label"> Product Catagery </label>
+      <input class="product-input" type="text" name="productCatagery" 
+      ngModel #productCatagery="ngModel" >
+  </div>
+
+  <div class="product-sec"><label class="product-label"> Product Id </label>
+      <input class="product-input" type="number" name="productId" 
+      ngModel #productId="ngModel" >
+  </div>
+
+  <div class="product-sec"><label class="product-label"> Product Name </label>
+      <input class="product-input" type="text" name="productName" 
+      ngModel #productName="ngModel" >
+  </div>
+
+  <div class="product-sec"><label class="product-label"> Product Price </label>
+      <input class="product-input" type="number" name="productPrice" 
+      ngModel #productPrice="ngModel" >
+  </div>
+
+  <div class="product-sec"><label class="product-label"> Product Description </label>
+      <input class="product-input" type="text" name="productDescription" 
+      ngModel #productDescription="ngModel" >
+  </div>
+
+  <div class="product-sec"><label class="product-label"> Product Image </label>
+      <input class="product-input" type="text" name="productImg" 
+      ngModel #productImg="ngModel" >
+  </div>
+
+  <button> Add </button>
+  <!-- <button (click)="update(productId.value, productName.value, productPrice.value)"> Update </button> -->
+</form>
+
+<button (click)=products()> Get </button>
+{{status}}
+<section class="container container-fluid" *ngIf="allproducts">
+    <div *ngFor="let allproduct of allproducts" class="test">
+        <div class="product-card">
+            <p class="id">{{allproduct.productId}}</p>
+            <p class="name">{{allproduct.productName}}</p>
+            <p class="price">{{allproduct.productPrice}}</p>
+            <button (click)="delete(allproduct._id)"> Delete </button>
+            <button [routerLink]="['/update',allproduct._id]"> Edit </button>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</section>

@@ -1,0 +1,12 @@
+<app-carosel></app-carosel>
+
+<section class="container container-fluid" *ngIf="products">
+    <div class="product-card" *ngFor="let product of products">
+        <img class="mobiles" src="{{product.productImg}}">
+        <p class="catagery">{{product.productCatagery}}</p>
+        <p class="name">{{product.productName}}</p>
+        <p class="price">{{product.productPrice}}</p>
+        <p class="description">{{product.productDescription | custom: '22'}}</p>
+        <div class="buy"> <button class="btn btn-success buy-btn"> Buy </button> </div>
+    </div>
+</section>

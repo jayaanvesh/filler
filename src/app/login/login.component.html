@@ -1,0 +1,30 @@
+<br><br>
+<form class="signin_form" #loginForm="ngForm" (ngSubmit)=loginDetails(loginForm)>
+    <img id="userimg" src="assets/123.gif"><br>
+    <div class="col">
+        <div class="input-group mb-2">
+            <div class="input-group-prepend">
+            <div class="input-group-text"><i class="fas fa-user"></i></div>
+            </div>
+            <input type="text" class="form-control emailid" id="inlineFormInputGroup" name="emailId" placeholder="Email-Id"
+                ngModel #emailId="ngModel" [class.is-invalid]="emailId.touched && emailId.invalid" required>
+            <small class="text-danger" [class.d-none]="emailId.valid || emailId.untouched">emailId is required</small>
+        </div>
+    </div>
+    <div class="col">
+        <div class="input-group mb-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text"><i class="fas fa-key"></i></div>
+          </div>
+          <input type="password" class="form-control password" id="inlineFormInputGroup" name="password" placeholder="Password"
+            ngModel #password="ngModel" [class.is-invalid]="password.touched && password.invalid" required>
+          <small class="text-danger" [class.d-none]="password.valid || password.untouched">Password is required</small>
+        </div>
+    </div><br>
+    <button class="btn signin_btn" [disabled]="loginForm.form.invalid"
+     data-toggle="modal" data-target=".bd-example-modal-sm">Sign In</button><br>
+    <a href="#" class="forgot_pw"><p>Forgot Password?</p></a>
+    <p style="text-align:center;">OR</p>
+    <a routerLink='/Register' class="signup"><p>Sign Up</p></a>
+</form>
+<br><br>

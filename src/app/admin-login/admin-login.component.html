@@ -1,0 +1,39 @@
+<br><br>
+<form class="signin_form" [formGroup]="adminLogin" novalidate>
+  <img id="userimg" src="assets/123.gif"><br>
+  <div class="social">
+      <i class="fab fa-facebook facebook"></i>
+      <i class="fab fa-twitter twitter"></i>
+      <i class="fab fa-google google"></i>
+  </div>
+  <p style="text-align:center">OR</p>
+  
+  <div class="col-auto">
+    <div class="input-group mb-2">
+      <div class="input-group-prepend">
+        <div class="input-group-text"><i class="fas fa-envelope"></i></div>
+      </div>
+      <input formControlName="emailId" type="email" class="form-control emailid"
+       #emailId id="inlineFormInputGroup" name="emailId" placeholder="Email-Id" required
+       [class.is-invalid]="emailId.touched && emailId.invalid" email autocomplete="off">
+      <small class="text-danger" [class.d-none]="emailId.valid || emailId.untouched">
+        emailId is required</small>
+    </div>
+  </div>
+
+  <div class="col-auto">
+    <div class="input-group mb-2">
+      <div class="input-group-prepend">
+        <div class="input-group-text"><i class="fas fa-key"></i></div>
+      </div>
+      <input formControlName="password" type="password" class="form-control password"
+             #password id="inlineFormInputGroup" name="password" placeholder="Password" required
+             [class.is-invalid]="password.touched && password.invalid" autocomplete="off">
+      <small class="text-danger" [class.d-none]="password.valid || password.untouched">
+        Password is required</small>
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="adminLogin.invalid" class="btn signin_btn"
+   data-toggle="modal" data-target=".bd-example-modal-sm">Login</button><br>
+</form>

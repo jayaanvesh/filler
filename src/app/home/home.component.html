@@ -1,0 +1,90 @@
+<app-carosel></app-carosel>
+<!-- <section class="container container-fluid">
+  <div class="product">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0Mg4y6FlZ18W8lfdpf_kadnRMHEvViq2mRGYk5cif_Ik2Gmcv">
+    <p class="name">RedMi Note 7 Pro</p>
+    <p class="price">13999</p>
+    <p class="catagery">Mobiles</p>
+    <p class="rating">4.4</p>
+  </div>
+  <div class="product">
+    <img src="https://rukminim1.flixcart.com/image/300/300/j7asfbk0/shoe/k/a/u/gc-1868115-42-woodland-camel-original-imaexkhcehpj93tb.jpeg?q=70">
+    <p class="name">WoodLand Shoes</p>
+    <p class="price">7000</p>
+    <p class="catagery">FootWare</p>
+    <p class="rating">4.5</p>
+  </div>
+  <div class="product">
+    <img src="https://rukminim1.flixcart.com/image/300/300/jcrz6vk0/shoe/7/p/j/flex-2017-rn-ni-9-nike-gym-blue-white-photo-blue-binary-blue-original-imaffu69r5h3j3zt.jpeg?q=70">
+    <p class="name">Nike Shoes</p>
+    <p class="price">6000</p>
+    <p class="catagery">FootWare</p>
+    <p class="rating">3.8</p>
+  </div>
+  <div class="product">
+    <img src="https://rukminim1.flixcart.com/image/388/466/jndhrbk0/sandal/h/d/v/fbf-ss0453g-7-sparx-blue-grey-original-imafa2rb6h3hrkqq.jpeg?q=50">
+    <p class="name">Sparx Sandals</p>
+    <p class="price">699</p>
+    <p class="catagery">FootWare</p>
+    <p class="rating">4.1</p>
+  </div>
+  <div class="product">
+    <img src="https://rukminim1.flixcart.com/image/388/466/sandal/9/g/8/camel-ss502u-sparx-6-original-imae7zcpvcuzfbzm.jpeg?q=50">
+    <p class="name">Sparx Sandals</p>
+    <p class="price">799</p>
+    <p class="catagery">FootWare</p>
+    <p class="rating">3.9</p>
+  </div>
+  <div class="product">
+    <img src="https://rukminim1.flixcart.com/image/388/466/joynde80/sandal/z/k/g/roman-10007-9-zixer-tan-original-imafbba9hbpnytsv.jpeg?q=50">
+    <p class="name">Zixer</p>
+    <p class="price">599</p>
+    <p class="catagery">FootWare</p>
+    <p class="rating">3.2</p>
+  </div>
+  <div class="product">
+    <img src="https://rukminim1.flixcart.com/image/312/312/jfvfjbk0/mobile/f/v/v/oppo-a83-2018-edition-na-original-imaf47p4zktdxtaz.jpeg?q=70" class="mobiles">
+    <p class="name">Oppo A83</p>
+    <p class="price">13999</p>
+    <p class="catagery">Mobiles</p>
+    <p class="rating">3.8</p>
+  </div>
+  <div class="product">
+    <img src="https://rukminim1.flixcart.com/image/312/312/jatym4w0/mobile/r/p/b/oppo-f5-youth-cph1725-original-imafybfftgr2eurw.jpeg?q=70" class="mobiles">
+    <p class="name">Oppo F5 Youth</p>
+    <p class="price">10000</p>
+    <p class="catagery">Mobiles</p>
+    <p class="rating">4.2</p>
+  </div>
+  <div class="product">
+    <img src="https://rukminim1.flixcart.com/image/312/312/jgcktjk0/mobile/6/y/k/vivo-v9-youth-1727-original-imaf4hv6mcfv6dxe.jpeg?q=70" class="mobiles">
+    <p class="name">Vivo V9 Youth</p>
+    <p class="price">13999</p>
+    <p class="catagery">Mobiles</p>
+    <p class="rating">4.1</p>
+  </div>
+  <div class="product">
+    <img src="https://rukminim1.flixcart.com/image/312/312/j2z1fgw0/mobile/5/7/h/vivo-v5s-1713-original-imaeu5e8m9xrhtjf.jpeg?q=70" class="mobiles">
+    <p class="name">Vivo V9</p>
+    <p class="price">18999</p>
+    <p class="catagery">Mobiles</p>
+    <p class="rating">4.5</p>
+  </div>
+  <div class="product">
+    <img src="https://rukminim1.flixcart.com/image/312/312/jlcmavk0/mobile/y/f/8/realme-2-rmx805-original-imaf8hxyjcncbxpw.jpeg?q=70" class="mobiles">
+    <p class="name">RealMe 2</p>
+    <p class="price">9499</p>
+    <p class="catagery">Mobiles</p>
+    <p class="rating">4.2</p>
+  </div>
+</section> -->
+
+<section class="container container-fluid" *ngIf="products">
+    <div class="product-card" *ngFor="let product of products">
+        <img class="mobiles" src="{{product.productImg}}">
+        <p class="catagery">{{product.productCatagery}}</p>
+        <p class="name">{{product.productName}}</p>
+        <p class="price">{{product.productPrice}}</p>
+        <p class="description">{{product.productDescription | custom: "22"}}</p>
+    </div>
+</section>

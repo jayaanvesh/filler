@@ -1,0 +1,80 @@
+<br><br>
+<form class="signup_form" #registerForm="ngForm" (ngSubmit)="registerDetails(registerForm)">
+    <p class="form_title">SignUp here</p>
+    <div class="social">
+        <i class="fab fa-facebook facebook"></i>
+        <i class="fab fa-twitter twitter"></i>
+        <i class="fab fa-google google"></i>
+    </div>
+    <p style="text-align:center">OR</p>
+    <div class="col-auto">
+        <div class="input-group mb-2">
+            <div class="input-group-prepend">
+                <div class="input-group-text"><i class="fas fa-user"></i></div>
+            </div>
+            <input type="text" class="form-control username" id="inlineFormInputGroup" placeholder="Username" name="username" ngModel #username="ngModel" [class.is-invalid]="username.touched && username.invalid" pattern="[A-Za-z0-9]{8,15}" required  autocomplete="off">
+            <div *ngIf="username.errors && (username.invalid && username.touched)">
+                <small class="text-danger" *ngIf="username.errors.required">Username is required</small>
+                <small class="text-danger" *ngIf="username.errors.pattern">Username should be between 8 to 15 characters</small>
+            </div>
+        </div>
+    </div>
+    <div class="col-auto">
+        <div class="input-group mb-2">
+            <div class="input-group-prepend">
+                <div class="input-group-text"><i class="fas fa-envelope"></i></div>
+            </div>
+            <input type="email" class="form-control emailid" id="inlineFormInputGroup" placeholder="Email-Id"  name="emailId" ngModel #email="ngModel" [class.is-invalid]="email.touched && email.invalid" email required  autocomplete="off">
+            <div *ngIf="email.errors && (email.invalid && email.touched)">
+                <small class="text-danger" *ngIf="email.errors.required">Email is required</small>
+                <small class="text-danger" *ngIf="email.errors.email">Invalid Email-Id</small>
+            </div>
+        </div>
+    </div>
+    <div class="col-auto">
+        <div class="input-group mb-2">
+            <div class="input-group-prepend">
+                <div class="input-group-text"><i class="fas fa-key"></i></div>
+            </div>
+            <input type="password" class="form-control password" id="inlineFormInputGroup" placeholder="Password" name="password" ngModel  #password="ngModel" [class.is-invalid]="password.touched && password.invalid" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required autocomplete="off">
+            <div *ngIf="password.errors && (password.invalid && password.touched)">
+                <small class="text-danger" *ngIf="password.errors.required">Password is required</small>
+                <small class="text-danger" *ngIf="password.errors.pattern">Password must have 1 uppercase, 1 lowercase, 1 number</small>
+            </div>
+        </div>
+    </div>
+    <div class="col-auto">
+        <div class="input-group mb-2">
+            <div class="input-group-prepend">
+                <div class="input-group-text"><i class="fas fa-mobile-alt"></i></div>
+            </div>
+            <input type="tel" class="form-control mobilenum" id="inlineFormInputGroup" placeholder="Mobile"  required name="mobilenum" ngModel #mobilenum="ngModel" [class.is-invalid]="mobilenum.touched && mobilenum.invalid" pattern="^\d{10}$" required autocomplete="off">
+            <div *ngIf="mobilenum.errors && (mobilenum.invalid && mobilenum.touched)">
+                <small class="text-danger" *ngIf="mobilenum.errors.required">Mobile number is required</small>
+                <small class="text-danger" *ngIf="mobilenum.errors.pattern">Must have 10 numbers</small>
+            </div>
+        </div>
+    </div>
+    <div class="gender">
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="gender" id="gender" value="male" ngModel required>
+            <label class="form-check-label" for="inlineRadio1">Male</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="gender" id="gender" value="female" ngModel required>
+            <label class="form-check-label" for="inlineRadio2">Female</label>
+        </div>
+    </div><br>
+    <button type="submit" [disabled]="registerForm.invalid" class="btn signup_btn" data-toggle="modal" data-target=".bd-example-modal-sm">Sign Up</button><br>
+</form>
+    <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <p style="text-align:center">{{register?.message}}</p>
+                    <button type="button" class="btn btn-primary" (click)='navlogin()' data-dismiss="modal">Okay</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<br><br>

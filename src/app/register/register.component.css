@@ -1,0 +1,109 @@
+.modal{
+    text-align: center;
+    margin-top: 13%
+}
+.signup_form{
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    width: 300px;
+    height: auto;
+    border-radius: 8px;
+    background-color: white;
+    background-size: cover;
+    box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.5);
+}
+i{
+    color: black;
+}
+.username,.emailid,.password,.mobilenum{
+    width: 80%;
+}
+.signup_form #userimg{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40px;
+    height: 40px;
+}
+.form_title{
+    text-align: center;
+    /* font-style: italic; */
+    font-size: 125%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+.signup_form::placeholder{
+    color: rgba(255, 255, 255,0.5);
+}
+.signup_btn{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    outline: none;
+    background-image: linear-gradient(90deg,rgb(22, 177, 238),rgb(219, 17, 209));
+    background-position: center;
+    background-size: 150%;
+    width: 80%;
+    padding: 2.5px;
+    font-size: 135%;
+    border-radius: 30px;
+}
+.gender{
+    margin-left: 17px;
+}
+.fa-warning{
+    color: red;
+}
+#msgregistration{
+    display: none;
+    padding: 10px;
+    text-align: center;
+    max-width: 200px;
+    border-radius: 20px;
+    border-color: rgba(34, 32, 32, 0.87);
+    border-style: dashed;
+    background-color: rgba(102, 219, 47, 0.822);
+}
+.social{
+    text-align: center;
+}
+.social i{
+    margin: 10px;
+    font-size: 150%;
+}
+.facebook{
+    color: blue;
+}
+.twitter{
+    color: rgb(0, 153, 255);
+}
+.google{
+    color: red;
+}
+.facebook,.twitter,.google{
+    padding: 7px;
+    border-radius: 50px;
+    box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.5);
+}
+.facebook:hover{
+    cursor: pointer;
+    color: white;
+    background-color: blue;
+    padding: 7px;
+    border-radius: 50px;
+}
+.twitter:hover{
+    cursor: pointer;
+    color: white;
+    background-color:rgb(0, 153, 255);
+    padding: 7px;
+    border-radius: 50px;
+}
+.google:hover{
+    cursor: pointer;
+    color: white;
+    background-color: red;
+    padding: 7px;
+    border-radius: 50px;
+}
